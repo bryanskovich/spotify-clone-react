@@ -29,10 +29,16 @@ function App() {
 					user: user
 				});
 			});
+			spotify.getUserPlaylists().then((playlists) => {
+				dispatch({
+					type: 'SET_PLAYLISTS',
+					playlists: playlists
+				});
+			});
 		}
 	}, []);
 
-	return <div className='app'>{token ? <Player spotify={spotify}/> : <Login />}</div>;
+	return <div className='app'>{token ? <Player spotify={spotify} /> : <Login />}</div>;
 }
 
 export default App;
