@@ -7,7 +7,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SongRow from './SongRow'
 function Body({ spotify }) {
-    const [ {discoverWeekly }, dispatch ] = useDataLayerValue();
+    const [ {discoverWeekly } ] = useDataLayerValue();
 	return (
 		<div className='body'>
 			<Header spotify={spotify}/>

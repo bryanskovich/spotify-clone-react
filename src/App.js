@@ -7,7 +7,7 @@ import Player from './Player';
 import { useDataLayerValue } from './DataLayer';
 const spotify = new SpotifyWebApi();
 function App() {
-	const [ { user, token }, dispatch ] = useDataLayerValue();
+	const [ {  token }, dispatch ] = useDataLayerValue();
 	//run code based on a given conditions
 	React.useEffect(() => {
 		//code...
@@ -43,6 +43,7 @@ function App() {
 				});
       })
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return <div className='app'>{token ? <Player spotify={spotify} /> : <Login />}</div>;
